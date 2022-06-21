@@ -1,0 +1,48 @@
+{% extends 'main_page/index.html' %}
+{% load static %}
+
+
+    <input type="number" name="counter">
+    <button type="submit">Добавить в корзину</button>
+</form>
+
+{% block content %}
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9 padding-right">
+            <div class="product-details"><!--product-details-->
+                <div class="col-sm-5">
+                    <div class="view-product">
+                        <img src="/{{ product.product_image }}" alt="" /> <!--product image-->
+                    </div>
+
+                </div>
+                <div class="col-sm-7">
+                    <div class="product-information"><!--/product-information-->
+                        <img src="{% static 'images/product-details/new.jpg' %}" class="newarrival" alt="" />
+                        <h2>{{ product.product_name }}</h2>
+                        <span>
+                            <span>{{ product.product_price }} сум</span><br>
+                            <label>Quantity</label><br>
+                            <form method="POST">
+                                {% csrf_token %}
+                                <input type="number" name="counter" />
+                                <button type="submit" class="btn btn-fefault cart">
+                                    <i class="fa fa-shopping-cart"></i>
+                                          Add to cart
+                                </button>
+                            </form>
+                        </span>
+                        <p><b>Description:</b> {{ product.product_des }}</p>
+                        <p><b>Condition:</b> New</p>
+                        <p><b>Brand:</b> E-SHOPPER</p>
+                        <a href=""><img src="images/product-details/share.png" class="share img-responsive"  alt="" /></a>
+                    </div><!--/product-information-->
+                </div>
+            </div><!--/product-details-->
+        </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

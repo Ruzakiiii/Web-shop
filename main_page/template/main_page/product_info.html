@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{{ product.product_category }}<br>
+{{ product.product_name }}<br>
+{{ product.product_price}}<br>
+{{ product.product_des }}<br>
+
+<img src="/{{ product.product_image }}">
+<form method="POST">
+    {% csrf_token %}
+    <input type="number" name="counter">
+    <button type="submit">Добавить в корзину</button>
+</form>
+
+<br><br>
+
+</body>
+</html>

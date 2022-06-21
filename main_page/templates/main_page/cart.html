@@ -1,0 +1,70 @@
+{% extends 'main_page/index.html' %}
+
+
+
+{% block content %}
+	<section id="cart_items">
+		<div class="container">
+			<div class="breadcrumbs">
+				<ol class="breadcrumb">
+				  <li><a href="/">Home</a></li>
+				  <li class="active">Shopping Cart</li>
+				</ol>
+			</div>
+			<div class="table-responsive cart_info">
+				<table class="table table-condensed">
+					<thead>
+						<tr class="cart_menu">
+							<td class="description">Item</td>
+							<td class="price">Price</td>
+							<td class="quantity">Quantity</td>
+							<td class="total">Total</td>
+							<td></td>
+						</tr>
+					</thead>
+					<tbody>
+					{% for i in user_cart %}
+						<tr>
+							<td class="cart_description">
+								<h4><a href="/product/{{ i.product_name }}">{{ i.product_name }}</a></h4>
+							</td>
+							<td class="cart_price">
+								<h4>{{ i.product_name.product_price }} сум</h4>
+							</td>
+							<td class="cart_quantity">
+								<h4>{{ i.product_count }}</h4>
+							</td>
+							<td class="cart_total">
+								<h4>{% widthratio i.product_name.product_price 1 i.product_count %} сум</h4>
+							</td>
+							<td class="cart_delete">
+								<a class="cart_quantity_delete" href="delete/{{ i.id }}"><i class="fa fa-times"></i></a>
+							</td>
+						</tr>
+					{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section> <!--/#cart_items-->
+
+	<section id="do_action">
+		<div class="container">
+			<div class="heading">
+				<h3>What would you like to do next?</h3>
+			</div>
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="total_area">
+						<ul>
+							<li>Total products <span>{{ user_total }} сум</span></li>
+							<li>Shipping Cost <span>Free</span></li>
+							<li>Total <span>{{ user_total }} сум</span></li>
+						</ul>
+							<a class="btn btn-default check_out" href="">Check Out</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section><!--/#do_action-->
+{% endblock content %}

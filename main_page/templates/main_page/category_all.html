@@ -1,0 +1,53 @@
+{% extends 'main_page/index.html' %}
+
+{% block content %}
+<section>
+		<div class="container">
+			<div class="row">
+<!--------------------Для вывода категорий всех-->
+                <div class="col-sm-3">
+					<div class="left-sidebar"><br>
+						<h2>Categories</h2>
+						<div class="panel-group category-products" id="accordian"><!--category-products-->
+							{% for category in categories %}
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="/products/{{ category.id }}">{{ category.category_name }}</a></h4>
+								</div>
+							</div>
+							{% endfor %}
+						</div><!--/category-products-->
+					</div>
+				</div>
+
+<!--------------------Для вывода товаров из определенной категориии-->
+				<div class="col-sm-9 padding-right">
+					<div class="features_items"><br>
+						<h2 class="title text-center">{{ products_in_category.0.product_category }}</h2>
+
+<!----------------------------- Через цикл подбираем товары ссответсвующей категории --------------------->
+                        {% for item in products_in_category %}
+                            <div class="col-sm-4">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+									<div class="productinfo text-center">
+										<img src="/{{ item.product_image }}" alt="" />
+										<h2>{{ item.product_price }}</h2>
+										<p>{{ item.product_name }}</p>
+										<a href="/product/{{ item.product_name }}" class="btn btn-default add-to-cart">Learn more</a>
+									</div>
+								</div>
+							</div>
+						</div>
+                    {% endfor %}
+
+                    </div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+{% endblock content %}
+
+
+
