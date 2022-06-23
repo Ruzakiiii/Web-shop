@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 def index(request):
     products = models.Products.objects.all()
     categories = models.Categories.objects.all()
-    sales = models.Sales.objects.all()
+    sales = models.Sales.objects.all() 
 
     form = forms.SearchForm()
 
