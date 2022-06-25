@@ -62,3 +62,25 @@ def abut(request):
 def voyti(request):
 
     return HttpResponse('Войти')
+
+
+# Отправка заказа в бот
+def send_to_tg(request, pk):
+    user = User.objects.get(id=pk)
+    user_cart = models.Cart.objects.filter(user_id=user.id)
+
+    full_message = 'Новый заказ'
+    message = '\n{product_name} {product_count} шт: {product_price_total}'
+
+    for i in user_cart:
+        text = message.format(product_name=i.product_name,
+                              product_count=i.product_count,
+                              product_price_total=i.product_name.product_price*i.product_count)
+        full_message+=text
+
+    from .bot_file import bot
+    bot.send_message(1025364331, full_message)
+
+    user_cart.delete()
+
+    return redirect('/')
