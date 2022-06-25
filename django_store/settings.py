@@ -82,10 +82,10 @@ WSGI_APPLICATION = 'django_store.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd9ukfflmju9ruv',
-        'USER': 'wmandjjnkgefbf',
-        'PASSWORD': '2a64c3a199c18da250630925772866ed758a642a45ac54588971dc3957f7d7d8',
-        'HOST': 'ec2-44-206-89-185.compute-1.amazonaws.com',
+        'NAME': 'd22qosuoim4ujr',
+        'USER': 'vjdiisuzoedgtg',
+        'PASSWORD': 'd4026d3cfc5f2cd50244b1021577943cf9a4377a9b836f2612c0855bc40ee1a4',
+        'HOST': 'ec2-23-23-182-238.compute-1.amazonaws.com',
     }
 }
 
@@ -137,5 +137,5 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Для отоброжения дизайна
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# # Для отоброжения дизайна
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
