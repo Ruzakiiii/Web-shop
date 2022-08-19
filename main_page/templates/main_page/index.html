@@ -36,7 +36,7 @@
 								<div class="search_box pull-right">
 									<form method="POST">
 										  {% csrf_token %}
-										  <input type="text" placeholder="Search" name="search_bar" />
+										  <input type="text" placeholder="Поиск" name="search_bar" />
 									</form>
 								</div>
 							</div>
@@ -46,11 +46,11 @@
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
 								{% if user.is_authenticated %}
-									<li><a href="/">Home</a></li>
-									<li><a href="/cart/{{ user.id }}"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-									<li><a href="/accounts/logout/"><i class="fa fa-lock"></i> Logout</a></li>
+									<li><a href="/">Основная</a></li>
+									<li><a href="/cart/{{ user.id }}"><i class="fa fa-shopping-cart"></i> Корзина</a></li>
+									<li><a href="/accounts/logout/"><i class="fa fa-lock"></i> Выйти</a></li>
 								{% else %}
-									<li><a href="/accounts/login/"><i class="fa fa-lock"></i> Login</a></li>
+									<li><a href="/accounts/login/"><i class="fa fa-lock"></i> Войти</a></li>
 								{% endif %}
 							</ul>
 						</div>
@@ -93,7 +93,7 @@
 
 				<div class="col-sm-3">
 					<div class="left-sidebar">
-						<h2>Category</h2>
+						<h2>Категория</h2>
 						<div class="panel-group category-products" id="accordian"><!--category-products-->
 							{% for category in categories %}
 							<div class="panel panel-default">
@@ -108,7 +108,7 @@
 
 				<div class="col-sm-9 padding-right">
 					<div class="features_items"><!--features_items-->
-						<h2 class="title text-center">Features Items</h2>
+						<h2 class="title text-center">Товары</h2>
 						{% for i in products %}
 							<div class="col-sm-4">
 								<div class="product-image-wrapper">
@@ -117,7 +117,7 @@
 											<a href="product/{{ i.product_name }}"><img src="{{ i.product_image }}"></a>
 											<h2>{{ i.product_price }} сум</h2>
 											<p>{{ i.product_name }}</p>
-											<a href="product/{{ i.product_name }}" class="btn btn-default add-to-cart">Learn more</a>
+											<a href="product/{{ i.product_name }}" class="btn btn-default add-to-cart">Узнать больше</a>
 										</div>
 									</div>
 								</div>
@@ -135,8 +135,6 @@
 				<div class="row">
 					<div class="col-sm-2">
 						<div class="companyinfo">
-							<h2><span>e</span>-shopper</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor</p>
 						</div>
 					</div>
 					<div class="col-sm-3">
@@ -152,8 +150,6 @@
 		<div class="footer-bottom">
 			<div class="container">
 				<div class="row">
-					<p class="pull-left">Copyright © 2013 E-SHOPPER Inc. All rights reserved.</p>
-					<p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span></p>
 				</div>
 			</div>
 		</div>

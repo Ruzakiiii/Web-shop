@@ -25,7 +25,7 @@ LOGOUT_REDIRECT_URL = '/accounts/login/'
 SECRET_KEY = 'django-insecure-fa1u7va3v^8$_tq9j5h%ynhlb$c@1na608^$mu3w(n@p!t%vh@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -112,7 +112,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru'
 
 TIME_ZONE = 'UTC'
 

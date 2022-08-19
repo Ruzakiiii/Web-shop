@@ -7,18 +7,18 @@
 		<div class="container">
 			<div class="breadcrumbs">
 				<ol class="breadcrumb">
-				  <li><a href="/">Home</a></li>
-				  <li class="active">Shopping Cart</li>
+				  <li><a href="/">Основная</a></li>
+				  <li class="active">Корзина</li>
 				</ol>
 			</div>
 			<div class="table-responsive cart_info">
 				<table class="table table-condensed">
 					<thead>
 						<tr class="cart_menu">
-							<td class="description">Item</td>
-							<td class="price">Price</td>
-							<td class="quantity">Quantity</td>
-							<td class="total">Total</td>
+							<td class="description">Товары</td>
+							<td class="price">Цена</td>
+							<td class="quantity">Количество</td>
+							<td class="total">Итог</td>
 							<td></td>
 						</tr>
 					</thead>
@@ -51,17 +51,17 @@
 	<section id="do_action">
 		<div class="container">
 			<div class="heading">
-				<h3>What would you like to do next?</h3>
+				<h3>Что бы вы хотели делать дальше?</h3>
 			</div>
 			<div class="row">
 				<div class="col-sm-6">
 					<div class="total_area">
 						<ul>
-							<li>Total products <span>{{ user_total }} сум</span></li>
-							<li>Shipping Cost <span>Free</span></li>
-							<li>Total <span>{{ user_total }} сум</span></li>
+							<li>Стоимость продуктов <span>{{ user_total }} сум</span></li>
+							<li>Стоимость доставки <span>Бесплатно</span></li>
+							<li>К оплате <span>{{ user_total }} сум</span></li>
 						</ul>
-							<a class="btn btn-default check_out" href="/send_to_tg/{{user.id}}">Check Out</a>
+							<a class="btn btn-default check_out" href="/send_to_tg/{{user.id}}">Заказать</a>
 					</div>
 				</div>
 			</div>

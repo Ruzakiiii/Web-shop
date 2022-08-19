@@ -7,7 +7,7 @@
 <!--------------------Для вывода категорий всех-->
                 <div class="col-sm-3">
 					<div class="left-sidebar"><br>
-						<h2>Categories</h2>
+						<h2>Категория</h2>
 						<div class="panel-group category-products" id="accordian"><!--category-products-->
 							{% for category in categories %}
 							<div class="panel panel-default">
@@ -34,7 +34,7 @@
 										<img src="/{{ item.product_image }}" alt="" />
 										<h2>{{ item.product_price }}</h2>
 										<p>{{ item.product_name }}</p>
-										<a href="/product/{{ item.product_name }}" class="btn btn-default add-to-cart">Learn more</a>
+										<a href="/product/{{ item.product_name }}" class="btn btn-default add-to-cart">Узнать больше</a>
 									</div>
 								</div>
 							</div>
