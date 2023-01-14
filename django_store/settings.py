@@ -79,16 +79,13 @@ WSGI_APPLICATION = 'django_store.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd22qosuoim4ujr',
-        'USER': 'vjdiisuzoedgtg',
-        'PASSWORD': 'd4026d3cfc5f2cd50244b1021577943cf9a4377a9b836f2612c0855bc40ee1a4',
-        'HOST': 'ec2-23-23-182-238.compute-1.amazonaws.com',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
